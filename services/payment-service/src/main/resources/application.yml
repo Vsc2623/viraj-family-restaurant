@@ -1,0 +1,18 @@
+server:
+  port: ${SERVER_PORT:8083}
+spring:
+  application:
+    name: payment-service
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/payment_db}
+    username: ${SPRING_DATASOURCE_USERNAME:foodhub}
+    password: ${SPRING_DATASOURCE_PASSWORD:foodhub_local_change_me}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
